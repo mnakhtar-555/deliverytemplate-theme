@@ -1,0 +1,6 @@
+# ignore all files in any directory named webfonts
+webfonts/
+
+css/brands.min.css
+css/fontawesome.min.css
+css/solid.min.css
