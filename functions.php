@@ -895,3 +895,23 @@ function custom_theme_options($wp_customize) {
 }
 
 add_action('customize_register', 'custom_theme_options');
+
+
+//Include Widgets Files from Widgets Folder
+require_once get_template_directory() . '/widgets/footer-widget.php';
+
+
+// functions.php
+
+function mnakhtar_register_sidebars() {
+register_sidebar(array(
+    'name' => __('Footer Sidebar', 'text_domain'),
+    'id' => 'footer-sidebar',
+    'description' => __('Widgets in this area will be shown in the footer.', 'text_domain'),
+    'before_widget' => '<div id="%1$s" class="widget %2$s">',
+    'after_widget' => '</div>',
+    'before_title' => '<h2 class="widgettitle">',
+    'after_title' => '</h2>',
+));
+}
+add_action('widgets_init', 'mnakhtar_register_sidebars');
